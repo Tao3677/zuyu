@@ -1,0 +1,1730 @@
+@import './reset.less';
+body {
+    min-width: 1200px;
+}
+/* header start */
+.header {
+    z-index: 10;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 94px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    .transition();
+    .boxS;
+    background-color: rgba(255, 255, 255, 0);
+    .container {
+        width: 1920 - 258 - 94px;
+    }
+    .logobox {
+        width: 360px;
+        height: 53px;
+        .fl(l);
+        vertical-align: middle;
+        .logoimg {
+            .di;
+            vertical-align: middle;
+            .boxS;
+            img {
+                .dl;
+            }
+        }
+        .logotext {
+            .di;
+            padding-left: 14px;
+            margin-left: 25px;
+            vertical-align: middle;
+            border-left: 1px solid #7E7E7E;
+            .boxS;
+            p {
+                font-size: 16px;
+                line-height: 22px;
+                color: #fff;
+            }
+        }
+    }
+    .navlist {
+        .fl(l);
+        margin-left: 220px;
+        li {
+            .fl(l);
+            line-height: 53px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-left: 30px;
+            margin-right: 30px;
+            a {
+                z-index: 1;
+                .pos(rel);
+                .dl;
+                color: #fff;
+                font-size: 16px;
+                &::after {
+                    z-index: -1;
+                    content: '';
+                    .pos(abss);
+                    left: 50%;
+                    bottom: 18px;
+                    width: 0;
+                    height: 4px;
+                    .transition();
+                    .transform(-50%, 0);
+                    background-color: #1DAD59;
+                }
+            }
+            &.active,
+            &:hover {
+                a {
+                    &::after {
+                        width: 100%;
+                        background-color: #1DAD59;
+                    }
+                }
+            }
+        }
+    }
+    .telbox {
+        width: 132 + 24 + 121px;
+        height: 47px;
+        .fl(r);
+
+    }
+    &.fixed,
+    &.inheader {
+        background-color: rgba(255, 255, 255, 0.96);
+        .logobox .logotext p{
+            color: #333;
+        }
+        .navlist li a {
+            color: #333;
+        }
+    }
+}
+/* header start */
+
+/* banner start */
+.banner {
+    width: 100%;
+    height: auto;
+    .swiper-slide {
+        .pos(rel);
+        .dl;
+        .bannertextbox {
+            .pos(abss);
+            left: 50%;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            .transform();
+            color: #fff;
+            font-family: '宋体';
+            h3 {
+                font-weight: bold;
+                font-size: 68px;
+                line-height: 68px;
+            }
+            p {
+                margin-top: 20px;
+                font-size: 28px;
+                line-height: 28px;
+            }
+        }
+    }
+    .swiper-pagination-bullets {
+        .swiper-pagination-bullet {
+            margin: 0 7px;
+            .transition();
+            background: #D8D8D8;
+            opacity: 1; 
+        }
+        .swiper-pagination-bullet-active {
+            background: @mainColor;
+        }
+    }
+}
+/* banner end */
+
+/* publictitle */
+.publictitle {
+    text-align: center;
+    h3 {
+        color: #333;
+        font-weight: bold;
+        font-size: 32px;
+        font-family: '宋体';
+        line-height: 46px;
+    }
+    p {
+        margin-top: 10px;
+        color: #999;
+        font-size: 16px;
+        line-height: 16px;
+    }
+}
+
+/* 服务与产品 start */
+.service-content {
+    width: 100%;
+    height: 916px;
+    padding-top: 57px;
+    overflow: hidden;
+    background-color: #F7F8F9;
+    .boxS;
+    .servicelist {
+        display: flex;
+        margin-top: 60px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: space-between;
+        li {
+            width: 587px;
+            height: 315px;
+            margin-bottom: 21px;
+            padding: 35px 40px 0;
+            background-color: #fff;
+            .boxS;
+            .tag {
+                font-size: 14px;
+                line-height: 21px;
+                color: #28A570;
+            }
+            .titlename {
+                .pos(rel);
+                z-index: 1;
+                margin-top: 6px;
+                line-height: 51px;
+                font-size: 36px;
+                font-family: '宋体';
+                font-weight: bold;
+                &::after {
+                    content: '';
+                    z-index: -1;
+                    .pos(abss);
+                    left: 0;
+                    bottom: 10px; 
+                    width: 320px;
+                    height: 8px;
+                    background-color: #6DD400;
+                }
+            }
+            .desc {
+                margin-top: 22px;
+                line-height: 22px;
+                color: #6D7278;
+                font-size: 14px;
+            }
+            .clickknow {
+                .dl;
+                width: 120px;
+                height: 46px;
+                margin-top: 30px;
+                color: #333;
+                text-align: center;
+                font-size: 14px;
+                line-height: 44px;
+                .transition();
+                border: 1px solid #333;
+                .boxS;
+                &:hover {
+                    color: @mainColor;
+                    border-color: @mainColor;
+                }
+            }
+        }
+    }
+}
+/* 服务与产品 end */
+
+/* 合作案例 start */
+.case-content {
+    margin-top: 54px;
+    .caselist {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 60px;
+        justify-content: space-between;
+        li {
+            width: 392px;
+            height: 326px;
+            margin-bottom: 28px;
+            background-color: #F7F8F9;
+            .imgbox {
+                .dl;
+                width: 392px;
+                height: 224px;
+                overflow: hidden;
+                img {
+                    .dl;
+                    width: 392px;
+                    height: 224px;
+                }
+            }
+            .textbox {
+                height: 102px;
+                padding: 25px 10px 0;
+                text-align: center;
+                .boxS;
+                .titletext,
+                .desc {
+                    z-index: 1;
+                    .pos(rel);
+                    .di;
+                    font-size: 20px;
+                    color: #333;
+                    line-height: 28px;
+                    font-weight: 500;
+                    &::after {
+                        z-index: -1;
+                        content: '';
+                        .pos(abss);
+                        left: 50%;
+                        bottom: 6px;
+                        width: 0;
+                        height: 6px;
+                        .transform(-50%, 0);
+                        .transition();
+                        background-color: #6DD400;
+                    }
+                }
+            }
+            &.last {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-content: center;
+                h4 {
+                    width: 100%;
+                    text-align: center;
+                    font-size: 28px;
+                    line-height: 40px;
+                    color: #333;
+                    font-weight: bold;
+                }
+                .more {
+                    .dl;
+                    width: 100%;
+                    text-align: center;
+                    text-transform: uppercase;
+                    margin-top: 5px;
+                    font-size: 20px;
+                    line-height: 28px;
+                }
+                .morebtn {
+                    .dl;
+                    width: 36px;
+                    height: 36px;
+                    margin-top: 37px;
+                    background: url('../images/ic_more.png') center center no-repeat;
+                    background-size: cover;
+                }
+            }
+            &:hover {
+                .textbox {
+                    .titletext,
+                    .desc {
+                        &::after {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* 合作案例 end */
+
+/* 行业洞见 start */
+.industry-content {
+    margin-top: 107 - 28px;
+    .industry-main {
+        margin-top: 54px;
+        .swiper-slide {
+            .pos(rel);
+            width: 1200px;
+            height: 476px;
+            .industry-img {
+                .dl;
+                width: 1200px;
+                height: 476px;
+            }
+            .industry-textbox {
+                .pos(abss);
+                left: 65px;
+                top: 63px;
+                width: 600px;
+                height: 350px;
+                padding-left: 50px;
+                color: #fff;
+                overflow: hidden;
+                .boxS;
+                background-color: #42B56A;
+                h4 {
+                    margin-top: 43px;
+                    font-size: 36px;
+                    line-height: 51px;
+                    font-weight: bold;
+                    font-family: '宋体';
+                }
+                .desc {
+                    width: 446px;
+                    margin-top: 15px;
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+                .clickknow {
+                    .dl;
+                    width: 120px;
+                    height: 46px;
+                    margin-top: 40px;
+                    line-height: 44px;
+                    text-align: center;
+                    color: #fff;
+                    .transition();
+                    border: 1px solid #fff;
+                    .boxS;
+                    &:hover {
+                        color: @mainColor;
+                        background-color: #fff;
+                    }
+                }
+
+            }
+        }
+        .swiper-pagination-bullets {
+            text-align: right;
+            padding-right: 46px;
+            .boxS;
+            .swiper-pagination-bullet {
+                margin: 0 7px;
+                .transition();
+                background: #D8D8D8;
+                opacity: 1; 
+            }
+            .swiper-pagination-bullet-active {
+                background: #41B15D;
+            }
+        }
+    }
+}
+/* 行业洞见 end */
+
+/* 关于我们 start */
+.aboutus-content {
+    width: 100%;
+    height: 776px;
+    overflow: hidden;
+    background: url('../images/pic_gywmbg.png') center center no-repeat;
+    background-size: cover;
+    .boxS;
+    .publictitle {
+        margin-top: 80px;
+    }
+    .abouttextbox {
+        width: 818px;
+        margin: 0 auto;
+        margin-top: 80px;
+        text-align: center;
+        h4 {
+            font-weight: bold;
+            font-family: '宋体';
+            font-size: 36px;
+            line-height: 51px;
+            span {
+                color: #1DAD59;
+            }
+        }
+        p {
+            margin-top: 14px;
+            line-height: 30px;
+            font-size: 16px;
+            color: #999;
+        }
+    }
+    .numbox {
+        display: flex;
+        margin-top: 50px;
+        justify-content: space-around;
+        li {
+            flex: 1;
+            text-align: center;
+            .num {
+                font-family: 'Helvetica';
+                font-size: 74px;
+                line-height: 89px;
+                color: #333;
+                font-weight: 200;
+            }
+            .txt {
+                margin-top: 2px;
+                font-size: 16px;
+                line-height: 22px;
+                color: #999;
+            }
+        }
+    }
+    .towebsite {
+        .dl;
+        width: 260px;
+        height: 56px;
+        margin: 0 auto;
+        margin-top: 80px;
+        text-align: center;
+        line-height: 54px;
+        text-decoration: underline;
+        font-family: 'PingFangSC-Medium,PingFang SC';
+        color: #2D89E3;
+        font-size: 16px;
+        .transition();
+        .boxS;
+        border: 2px solid #2D89E3;
+        &:hover {
+            color: #fff;
+            background-color: #2D89E3; 
+        }
+    }
+}
+/* 关于我们 end */
+
+/* 联系我们 start */
+.publiccontact {
+    margin-top: 90px;
+    h3 {
+        font-size: 36px;
+        line-height: 51px;
+        font-family: '宋体';
+        font-weight: bold;
+        color: #333;
+        text-align: center;
+    }
+    p.desctext {
+        margin-top: 17px;
+        color: #333;
+        font-size: 16px;
+        line-height: 22px;
+        text-align: center;
+    }
+    .contactform {
+        width: 202 + 440 + 192px;
+        height: 68px;
+        margin: 0 auto;
+        margin-top: 66px;
+        .username,
+        .usertel {
+            width: 201px;
+            height: 68px;
+            .fl(l);
+            line-height: 66px;
+            padding-left: 24px;
+            color: #999;
+            font-size: 16px;
+            .transition();
+            .boxS;
+            border: 1px solid #E1E1E1;
+            background-color: #fafafa;
+            &:focus {
+                border-color: #2D89E3;
+            }
+        }
+        .usertel {
+            width: 410px;
+            margin-left: 14px;
+        }
+        .submit-info {
+            .dl;
+            width: 192px;
+            height: 68px;
+            .fl(r);
+            text-align: center;
+            line-height: 68px;
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+            cursor: pointer;
+            border: none;
+            background-color: #2D89E3;
+        }
+    }
+    .telbox {
+        width: 202 + 440 + 192px;
+        height: 28px;
+        margin: 0 auto;
+        margin-top: 80px;
+        .lefttel, .rightphone {
+            .fl(l);
+            margin-left: 52px;
+            font-size: 0;
+            .ico {
+                .di;
+                width: 28px;
+                height: 28px;
+                background: url('../images/ic_telephone.png') center center no-repeat;
+                background-size: cover;
+            }
+            .telnum {
+                z-index: 1;
+                .pos(rel);
+                .di;
+                margin-left: 18px;
+                font-size: 36px;
+                line-height: 36px;
+                font-family: '宋体';
+                font-weight: bold;
+                &::after {
+                    content: '';
+                    z-index: -1;
+                    .pos(abss);
+                    left: 0;
+                    bottom: 8px;
+                    width: 100%;
+                    height: 8px;
+                    background-color: #6DD400;
+                }
+            }
+        }
+        .rightphone {
+            margin-left: 115px;
+            .ico {
+                background-image: url('../images/ic_phone.png');
+            }
+        }
+    }
+}
+/* 联系我们 end */
+
+/* footer start */
+.footer {
+    width: 100%;
+    height: 173px;
+    padding-top: 36px;
+    margin-top: 94px;
+    .boxS;
+    background-color: #3D3D3D;
+    .leftinfo {
+        width: 500px;
+        height: auto;
+        .fl(l);
+        font-size: 14px;
+        line-height: 20px;
+        .company {
+            color: #fff;
+        }
+        .designby {
+            margin-top: 9px;
+            color: #999;
+        }
+        .icpcode {
+            .dl;
+            margin-top: 19px;
+            color: #338AE5;
+        }
+    }
+    .rightwechat {
+        width: 94px;
+        height: 94px;
+        .fl(r);
+        img {
+            width: 94px;
+            height: 94px;
+        }
+    }
+} 
+/* footer end */ 
+
+
+/* 二级页面 start */
+// header
+header {
+    .pos(rel);
+    height: 94px;
+}
+/* subbanner start */
+.subbanner {
+    .pos(rel);
+    width: 100%;
+    .boxS;
+    img {
+        .dl;
+        width: 100%;
+    }
+    .subbannertext {
+        .pos(abss);
+        left: 50%;
+        top: 50%;
+        width: 998px;
+        .transform();
+        color: #fff;
+        h3 {
+            font-size: 44px;
+            line-height: 64px; 
+            text-align: center;
+            font-family: '宋体';
+            font-weight: bold;
+        }
+        p {
+            margin-top: 20px;
+            font-size: 14px;
+            line-height: 22px;
+            &.text-center {
+                text-align: center;
+            }
+        }
+    }
+}
+/* subbanner end */
+
+/* 栏目 start */ 
+.columnlist {
+    width: 100%;
+    height: 76px;
+    background-color: #3D3D3D;
+    .clist {
+        display: flex;
+        width: 80%;
+        height: 76px;
+        margin: 0 auto;
+        justify-content: space-around;
+        align-items: center;
+        li {
+            flex: 1;
+            text-align: center;
+            a {
+                z-index: 1;
+                .pos(rel);
+                color: #fff;
+                font-size: 16px;
+                &::after {
+                    z-index: -1;
+                    content: '';
+                    .pos(abss);
+                    left: 50%;
+                    bottom: 1px;
+                    width: 0;
+                    height: 4px;
+                    .transform(-50%, 0);
+                    .transition();
+                    background-color: #1DAD59;
+                }
+            }
+            &.active,
+            &:hover {
+                a::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+/* 栏目 end */
+
+
+// 数字化转型战略咨询服务
+/* 客户体验 start */
+.customer-experience {
+    margin-top: 80px;
+    h3 {
+        text-align: center;
+        font-size: 36px;
+        line-height: 51px;
+        color: #333;
+    }
+    .titledesc {
+        width: 737px;
+        margin: 0 auto;
+        margin-top: 23px;
+        font-size: 16px;
+        line-height: 22px;
+        text-align: center;
+        color: #999;
+    }
+    .titlebox {
+        width: 1200px;
+        height: auto;
+        margin-top: 82px;
+        .ftitle {
+            width: 100%;
+            height: 90px;
+            text-align: center;
+            line-height: 90px;
+            font-size: 24px;
+            color: #333;
+            background: url('../images/pic_khtybg.png') center center no-repeat;
+            background-size: cover;
+        }
+        .stitle {
+            width: 100%;
+            height: 68px;
+            margin-top: 12px;
+            text-align: center;
+            line-height: 68px;
+            font-size: 24px;
+            color: #333;
+            background-color: #F7F8F9;
+        }
+    }
+    .exlist {
+        width: 100%;
+        height: 284px;
+        margin-top: 12px;
+        display: flex;
+        justify-content: space-between;
+        li {
+            width: 291px;
+            height: 284px;
+            text-align: center;
+            overflow: hidden;
+            background-color: #F7F8F9;
+            h5 {
+                z-index: 1;
+                .pos(rel);
+                width: 128px;
+                height: 33px;
+                margin: 0 auto;
+                margin-top: 56px;
+                font-size: 24px;
+                &::after {
+                    z-index: -1;
+                    content: '';
+                    .pos(abss);
+                    left: 0;
+                    bottom: 6px;
+                    width: 100%;
+                    height: 8px;
+                    background-color: #6DD400;
+                }
+            }
+            .txtlist {
+                margin-left: 88px;
+                margin-top: 26px;
+                dd {
+                    line-height: 40px;
+                    color: #999;
+                    font-size: 16px;
+                    text-align: left;
+                    .ico {
+                        .pos(rel);
+                        .di;
+                        width: 12px;
+                        height: 12px;
+                        margin-right: 8px;
+                        border-radius: 50%;
+                        border: 1px solid #979797;
+                        .boxS;
+                        &::after {
+                            content: '';
+                            .pos(abss);
+                            left: 50%;
+                            top: 50%;
+                            width: 6px;
+                            height: 6px;
+                            .transform();
+                            border-radius: 50%;
+                            background-color: #D8D8D8;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* 客户体验 end */
+
+/* 流程方法 start */
+.processbox {
+    width: 100%;
+    height: 915px;
+    margin-top: 66px;
+    overflow: hidden;
+    background-color: #F7F8F9;
+    h3 {
+        font-size: 32px;
+        line-height: 46px;
+        text-align: center;
+        margin-top: 48px;
+    }
+    .processbar {
+        width: 100%;
+        height: 88px;
+        margin-top: 35px;
+        text-align: center;
+        font-size: 0;
+        background: url('../images/pic_lan.png') center center no-repeat;
+        background-size: cover;
+        span {
+            .di;
+            width: 50%;
+            font-size: 28px;
+            color: #fff;
+            line-height: 88px;
+        }
+    }
+    .functionlist {
+        display: flex;
+        width: 100%;
+        height: 600px;
+        margin-top: 17px;
+        justify-content: space-between;
+        li {
+            width: 235px;
+            height: 600px;
+            background-color: #fff;
+            .stitle {
+                width: 100%;
+                height: 72px;
+                text-align: center;
+                line-height: 72px;
+                color: #fff;
+                font-size: 20px;
+                background-color: #565656;
+            }
+            .detailbox {
+                width: 100%;
+                height: 528px;
+                padding: 45px 35px 0;
+                color: #999;
+                .boxS;
+                dl {
+                    height: 192px;
+                    margin-bottom: 54px;
+                    font-size: 16px;
+                    dt {
+                        margin-bottom: 15px;
+                        line-height: 22px;
+                        color: #333;
+                    }
+                    dd {
+                        margin: 0;
+                        line-height: 22px;
+                    }
+                }
+            }
+        }
+    }
+}
+/* 流程方法 end */
+
+/* 为什么选择 start */
+.whybox {
+    margin-top: 56px;
+    margin-bottom: 75px;
+    h3 {
+        font-weight: bold;
+        font-family: '宋体';
+        font-size: 32px;
+        line-height: 46px;
+        color: #333;
+        text-align: center;
+    }
+    h4 {
+        margin-top: 57px;
+        font-size: 36px;
+        text-align: center;
+        font-weight: bold;
+        font-family: '宋体';
+        line-height: 51px;
+        span {
+            color: #28A570;
+        }
+    }
+    .titledesc {
+        width: 737px;
+        margin: 0 auto;
+        margin-top: 22px;
+        text-align: center;
+        color: #999;
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .caselist {
+        display: flex;
+        margin-top: 62px;
+        justify-content: space-between;
+        li {
+            width: 392px;
+            height: 348px;
+            background-color: #F7F8F9;
+            .imgbox {
+                .dl;
+                width: 392px;
+                height: 224px;
+                img {
+                    .dl;
+                    width: 392px;
+                    height: 224px;
+                }
+            }
+            .textbox {
+                width: 100%;
+                height: 124px;
+                padding: 20px 30px 0;
+                overflow: hidden;
+                .boxS;
+                .titletxt {
+                    z-index: 1;
+                    .pos(rel);
+                    font-size: 20px;
+                    line-height: 28px;
+                    color: #333;
+                    &::after {
+                        z-index: -1;
+                        content: '';
+                        .pos(abss);
+                        left: 50%;
+                        bottom: 4px;
+                        width: 0;
+                        height: 6px;
+                        .transition();
+                        .transform(-50%, 0);
+                        background-color: #6DD400;
+                    }
+                }
+                .casedesc {
+                    margin-top: 12px;
+                    font-size: 16px;
+                    line-height: 22px;
+                    color: #333;
+                }
+            }
+            &:hover {
+                .textbox {
+                    .titletxt {
+                        &::after {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .morecase {
+        .dl;
+        width: 226px;
+        height: 46px;
+        margin: 0 auto;
+        margin-top: 62px;
+        text-align: center;
+        font-size: 14px;
+        color: #333;
+        line-height: 44px;
+        .boxS;
+        .transition();
+        border: 1px solid rgba(0, 0, 0, .85);
+        &:hover {
+            color: #fff;
+            border-color: @mainColor;
+            background-color: @mainColor;
+        }
+    }
+}
+/* 为什么选择 end */
+
+// 足疗按摩企业服务创新培训
+
+/* 准备 start */
+.preparebox {
+    margin-top: 80px;
+    h3 {
+        font-size: 36px;
+        text-align: center;
+        line-height: 51px;
+    }
+    .titledesc {
+        width: 737px;
+        margin: 0 auto;
+        margin-top: 23px;
+        text-align: center;
+        line-height: 22px;
+        font-size: 16px;
+        color: #999;
+    }
+    .prepareimg {
+        .dl;
+        margin: 0 auto;
+        margin-top: 59px;
+    }
+} 
+/* 准备 end */ 
+
+/* 特色 start */
+.features {
+    width: 100%;
+    height: 616px;
+    margin-top: 59px;
+    overflow: hidden;
+    background: url('../images/pic_lctsbg.jpg') center center no-repeat;
+    background-size: cover;
+    h3 {
+        margin-top: 58px;
+        font-size: 32px;
+        line-height: 46px;
+        text-align: center;
+        color: #333;
+    }
+    .featurescenter {
+        .pos(rel);
+        width: 656px;
+        height: 327px;
+        margin: 0 auto;
+        margin-top: 59px;
+        background: url('../images/pic_kcts.png') center center no-repeat;
+        background-size: cover;
+        .descbox {
+            .pos(abss);
+            .title {
+                font-size: 20px;
+                line-height: 28px;
+                color: #333;
+            }
+            .desc {
+                margin-top: 13px;
+                line-height: 20px;
+                font-size: 14px;
+                color: #333;
+            }
+        }
+        .fbox {
+            left: -160px;
+            top: 0;
+            text-align: right;
+        }
+        .sbox {
+            right: -187px;
+            top: 0;
+        }
+        .tbox {
+            left: -150px;
+            bottom: -10px;
+            text-align: right;
+        }
+        .fobox {
+            right: -134px;
+            bottom: -10px;
+        }
+    }
+} 
+/* 特色 end */ 
+
+/* 课程内容 start */
+.classcontent {
+    width: 18 + 640 + 364px;
+    margin: 0 auto;
+    margin-top: 59px;
+    h3 {
+        font-size: 32px;
+        line-height: 46px;
+        color: #333;
+        text-align: center;
+    }
+    .classlist {
+        width: 100%;
+        margin-top: 59px;
+        li {
+            .pos(rel);
+            width: 18 + 21 + 364px;
+            height: 35 + 20 + 66px;
+            padding-left: 21 + 18px; 
+            margin-bottom: 83px;
+            .boxS;
+            &:nth-child(2n+1) {
+                .fl(l);
+            }
+            &:nth-child(2n) {
+                .fl(r);
+            }
+            .ico-circle {
+                .pos(abss);
+                left: 0;
+                top: 4px;
+                width: 18px;
+                height: 18px;
+                background: url('../images/ic_circle.png') center center no-repeat;
+                background-size: cover;
+            }
+            h4 {
+                z-index: 1;
+                .pos(rel);
+                font-size: 24px;
+                line-height: 24px;
+                color: #333;
+                &::after {
+                    z-index: -1;
+                    content: '';
+                    .pos(abss);
+                    left: 0;
+                    bottom: 0;
+                    width: 264px;
+                    height: 8px;
+                    background-color: #6DD400;
+                }
+            }
+            p {
+                margin-top: 20px;
+                line-height: 22px;
+                font-size: 16px;
+                color: #333;
+            }
+        }
+    }
+}
+/* 课程内容 end */
+
+/* 课程师资 start */
+.classteacher {
+    width: 100%;
+    height: 1292px;
+    overflow: hidden;
+    background-color: #F7F8F9;
+    h3 {
+        margin-top: 41px;
+        margin-bottom: 48px;
+        font-size: 32px;
+        line-height: 46px;
+        text-align: center;
+    }
+    .teachercontent {
+        .pos(rel);
+        width: 100%;
+        height: 520px;
+        padding-top: 44px;
+        padding-left: 44px; 
+        margin-bottom: 38px;
+        .boxS;
+        background-color: #fff;
+        .rightico {
+            .pos(abss);
+            right: 48px;
+            top: 48px;
+            width: 48px;
+            height: 48px;
+            background: url('../images/ic_yh.png') center center no-repeat;
+            background-size: cover;
+        }
+        .leftimg {
+            .dl;
+            width: 338px;
+            height: 430px;
+            .fl(l);
+        }
+        .rightmain {
+            width: 351 + 32 + 351px;
+            height: auto;
+            .fl(l);
+            margin-left: 60px;
+            .name {
+                z-index: 1;
+                .pos(rel);
+                margin-top: 19px;
+                font-size: 24px;
+                line-height: 35px;
+                color: #333;
+                &::after {
+                    z-index: -1;
+                    content: '';
+                    .pos(abss);
+                    left: 0;
+                    bottom: 0;
+                    width: 72px;
+                    height: 8px;
+                    background-color: #6DD400;
+                }
+            }
+            .infolist {
+                margin-top: 25px;
+                li {
+                    font-size: 12px;
+                    line-height: 17px;
+                    color: #333;
+                }
+            }
+            .infomain {
+                width: 100%;
+                margin-top: 50px;
+                .maintxt {
+                    width: 351px;
+                    .infotitle {
+                        font-size: 14px;
+                        line-height: 20px;
+                        color: #333;
+                        &.industrytitle {
+                            margin-top: 22px;
+                        }
+                    }
+                    .infotxt {
+                        margin-top: 12px;
+                        font-size: 12px;
+                        line-height: 17px;
+                    }
+                    &.leftmain {
+                        .fl(l);
+                    }
+                    &.righttxt {
+                        .fl(r);
+                    }
+                }
+            }
+        }
+
+    }
+}
+/* 课程师资 end */ 
+
+// 数字化系统定制服务
+
+/* 您需要的系统，我们助你实现 start */
+.helpyou {
+    margin-top: 80px;
+    margin-bottom: 85px;
+    h3.title {
+        text-align: center;
+        font-size: 36px;
+        line-height: 51px;
+        color: #333;
+    }
+    .titledesc {
+        width: 737px;
+        margin: 0 auto;
+        margin-top: 23px;
+        font-size: 16px;
+        line-height: 22px;
+        text-align: center;
+        color: #999;
+    }
+    .helpcontent {
+        margin-top: 99px;
+        .helplist {
+            display: flex;
+            .imgbox {
+                .dl;
+                width: 50%;
+            }
+            .textcontent {
+                flex: 1;
+                margin-top: 94px;
+                padding-left: 50px;
+                padding-right: 186px;
+                .boxS;
+                h4 {
+                    .di;
+                    font-size: 28px;
+                    line-height: 40px;
+                    color: #333;
+                    .pos(rel);
+                    z-index: -1;
+                    &::after {
+                        content: '';
+                        .pos(abss);
+                        z-index: -1;
+                        left: 0;
+                        bottom: 4px;
+                        width: 100%;
+                        height: 8px;
+                        background-color: #6DD400;
+                    }
+                }
+                p {
+                    width: 100%;
+                    margin-top: 26px;
+                    font-size: 16px;
+                    line-height: 22px;
+                    color: #333;
+                }
+            }
+            &.reverse {
+                flex-direction: row-reverse;
+            }
+        }
+    }
+}
+/* 您需要的系统，我们助你实现 end */
+
+/* 服务流程 start */
+.server-process {
+    width: 100%;
+    height: 826px;
+    overflow: hidden;
+    background-color: #F7F8F9;
+    h3 {
+        margin-top: 66px;
+        text-align: center;
+        font-size: 32px;
+        line-height: 46px;
+        color: #333;
+    }
+    .processflow {
+        .pos(rel);
+        margin-top: 86px;
+        .rightshape {
+            z-index: 0;
+            .pos(abss);
+            right: 0;
+            top: 34px;
+            width: 122px;
+            height: 318px;
+            background: url('../images/pic_line.png') center center no-repeat;
+            background-size: cover;
+        }
+        .topline {
+            .pos(abss);
+            left: 52px;
+            top: 40px;
+            width: 1045px;
+            height: 1px;
+            background-color: #D0D0D0;
+        }
+        .bottomline {
+            .pos(abss);
+            left: 52px;
+            bottom: 189px;
+            width: 1045px;
+            height: 1px;
+            background-color: #D0D0D0;
+        }
+        .processcontent {
+            .pos(rel);
+            z-index: 1;
+            display: flex;
+            justify-content: start;
+            .processmain {
+                width: 162px;
+                height: 80 + 108 + 44px;
+                margin-right: 175px;
+                .topico {
+                    .dl;
+                    width: 80px;
+                    height: 80px;
+                    margin: 0 auto;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+                &:nth-of-type(1) {
+                    .topico {
+                        background-image: url('../images/ic_xqdy.png');
+                    }
+                }
+                &:nth-of-type(2) {
+                    .topico {
+                        background-image: url('../images/ic_xmjh.png');
+                    }
+                }
+                &:nth-of-type(3) {
+                    .topico {
+                        background-image: url('../images/ic_cpsj.png');
+                    }
+                }
+                &:nth-of-type(4) {
+                    margin-right: 61px;
+                    .topico {
+                        background-image: url('../images/ic_xtkf.png');
+                    }
+                }
+                .num {
+                    .dl;
+                    margin-top: 22px;
+                    text-align: center;
+                    line-height: 44px;
+                    font-size: 30px;
+                    color: #42B56A;
+                }
+                .ptitle {
+                    margin-top: 2px;
+                    text-align: center;
+                    font-size: 20px;
+                    line-height: 28px;
+                    color: #333;
+                }
+                .pdesc {
+                    margin-top: 12px;
+                    color: #999;
+                    font-size: 16px;
+                    line-height: 22px;
+                    text-align: center;
+                }
+            }
+        }
+        .topprocess {
+            margin-bottom: 70px;
+        }
+        .bottomprocess {
+            flex-direction: row-reverse;
+            .processmain {
+                margin-right: 175px;
+                &:nth-of-type(1) {
+                    margin-right: 61px;
+                    .topico {
+                        background-image: url('../images/ic_xtcs.png');
+                    }
+                }
+                &:nth-of-type(2) {
+                    .topico {
+                        background-image: url('../images/ic_ysjf.png');
+                    }
+                }
+                &:nth-of-type(3) {
+                    .topico {
+                        background-image: url('../images/ic_sxyy.png');
+                    }
+                }
+                &:nth-of-type(4) {
+                    margin-right: 175px;
+                    .topico {
+                        background-image: url('../images/ic_xtwh.png');
+                    }
+                }
+            }
+        }
+    }
+}
+/* 服务流程 end */
+
+// SimpleWay足疗按摩数字系统
+
+/* 模式 start */
+.modelcontent {
+    margin-top: 84px;
+    margin-bottom: 106 - 68px;
+    h3 {
+        margin-bottom: 70px;
+        font-size: 32px;
+        line-height: 46px;
+        color: #333;
+        text-align: center;;
+    }
+    .modellist {
+        width: 98 + 625 + 364px;
+        height: auto;
+        li {
+            width: 98 + 35 + 364px;
+            height: 35 + 20 + 66px;
+            .fl(l);
+            margin-bottom: 68px;
+            .icobox {
+                .dl;
+                width: 98px;
+                height: 98px;
+                .fl(l);
+                margin-top: 12px;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }
+            &:nth-of-type(1) {
+                .icobox {
+                    background-image: url('../images/ic_ksjr.png');
+                }
+            }
+            &:nth-of-type(2) {
+                .icobox {
+                    background-image: url('../images/ic_mdjz.png');
+                }
+            }
+            &:nth-of-type(3) {
+                .icobox {
+                    background-image: url('../images/ic_ydfw.png');
+                }
+            }
+            &:nth-of-type(4) {
+                .icobox {
+                    background-image: url('../images/ic_lhpb.png');
+                }
+            }
+            &:nth-of-type(5) {
+                .icobox {
+                    background-image: url('../images/ic_qxfc.png');
+                }
+            }
+            &:nth-of-type(6) {
+                .icobox {
+                    background-image: url('../images/ic_qxjf.png');
+                }
+            }
+            &:nth-of-type(7) {
+                .icobox {
+                    background-image: url('../images/ic_zxyy.png');
+                }
+            }
+            &:nth-of-type(8) {
+                .icobox {
+                    background-image: url('../images/ic_yxgj.png');
+                }
+            }
+             .righttxt {
+                width: 364px;
+                height: auto;
+                .fl(l);
+                margin-left: 35px;
+                .titletxt {
+                    z-index: 1;
+                    .pos(rel);
+                    .di;
+                    font-size: 24px;
+                    line-height: 35px;
+                    color: #333;
+                    &::after {
+                        z-index: -1;
+                        content: '';
+                        .pos(abss);
+                        left: 0;
+                        bottom: 4px;
+                        width: 100%;
+                        height: 8px;
+                        background-color: #6DD400;
+                    }
+                }
+                .desctxt {
+                    margin-top: 20px;
+                    font-size: 16px;
+                    line-height: 22px;
+                    color: #333;
+                }
+            }
+            &:nth-child(2n) {
+                .fl(r);
+            }
+        }
+    }
+}
+/* 模式 end */
+
+/* 管理端 start */
+.managementbox {
+    width: 100%;
+    height: 790px;
+    text-align: center;
+    overflow: hidden;
+    background: url('../images/pic_gldbg.jpg') center center no-repeat;
+    background-size: cover;
+    h3 {
+        margin-top: 58px;
+        font-size: 32px;
+        line-height: 46px;
+        color: #333;
+    }
+    .titledesc {
+        width: 610px;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 12px;
+        color: #999;
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+/* 管理端 end */
+
+/* 用户端 start */
+.userbox {
+    margin-top: 46px;
+    .leftimg {
+        .pos(rel);
+        top: 0;
+        .dl;
+        width: 600px;
+        .fl(l);
+        .transition();
+    }
+    .rightcontent {
+        width: 557px;
+        .fl(r);
+        h3 {
+            margin-top: 108px;
+            font-size: 32px;
+            line-height: 46px;
+            color: #333;
+        }
+        .titledesc {
+            margin-top: 12px;
+            color: #999;
+            line-height: 22px;
+            font-size: 16px;
+        }
+        .iconbox {
+            width: 62 * 5 + 32 * 5px;
+            height: auto;
+            margin-top: 89px;
+            li {
+                width: 62px;
+                .fl(l);
+                margin-bottom: 34px;
+                margin-right: 32px;
+                img {
+                    .dl;
+                    margin: 0 auto;
+                }
+                span {
+                    .dl;
+                    text-align: center;
+                    margin-top: 4px;
+                    font-size: 12px;
+                    line-height: 17px;
+                    color: #333;
+                }
+            }
+        }
+    }
+    &:hover {
+        .leftimg {
+            top: -20px;
+        }
+    }
+} 
+/* 用户端 end */ 
+
+/* 技师端 start */
+.workerbox {
+    width: 100%;
+    height: 656px;
+    overflow: hidden;
+    background-color: #F7F8F9;
+    .leftimg {
+        .pos(rel);
+        top: 0;
+        .dl;
+        width: 600px;
+        .fl(l);
+        margin-top: 61px;
+        .transition();
+    }
+    .rightcontent {
+        width: 500px;
+        height: auto;
+        .fl(l);
+        margin-left: 49px;
+        margin-top: 102px;;
+        h3 {
+            margin-bottom: 64px;
+            font-size: 32px;
+            line-height: 46px;
+        }
+        dl {
+            margin-bottom: 30px;
+            dt {
+                margin-bottom: 11px;
+                font-size: 20px;
+                line-height: 28px;
+                color: #333;
+            }
+            dd {
+                font-size: 16px;
+                line-height: 22px;
+                color: #999;
+            }
+        }
+    }
+    &:hover {
+        .leftimg {
+            top: -20px;
+        }
+    }
+}
+/* 技师端 end */
+
+/* 联系 start */
+.ncontact {
+    padding-top: 92px;
+    box-shadow:0px -20px 40px 0px rgba(0,0,0,0.03);
+} 
+/* 联系 end */ 
+
+/* 二级页面 end */
